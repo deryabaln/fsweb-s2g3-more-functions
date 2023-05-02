@@ -16,10 +16,12 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
+function dosyaAdiniBul(dosya) {
+ let sonIndex = dosya.lastIndexOf('/');
+ const dosyaAdi = dosya.slice(sonIndex+1)
+    return dosyaAdi
 }
-
+console.log(dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"))
 /*
   GÖREV 2
   - Input:  Bir sayı arrayini parametre olarak alacak bir fonksiyon oluştur.
@@ -38,10 +40,18 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamaBul(sayilarArray) {
+  let toplam = 0;
+  let ortalama = 0;
+  if (sayilarArray.length == 0){
+    return null
+  }
+  sayilarArray.forEach(sayilar=>{
+    toplam += sayilar
+  });
+  return toplam / sayilarArray.length
 }
-
+console.log(ortalamaBul([])) 
 /*
   GÖREV 3
   - Input:  Bir sayı arrayini ve ortalama bulmaya yarayacak bir fonksiyonu parametre olarak alacak bir fonksiyon oluştur.
@@ -62,9 +72,18 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(array) {
+  let ortalamadanBuyukler = [];
+  if(array.length == 0){
+    return null
+  };
+  array.forEach(sayilar=> {
+    if (sayilar >= (ortalamaBul(array)))
+    return ortalamadanBuyukler.push(sayilar);
+  }) 
+return ortalamadanBuyukler
 }
+console.log(ortalamadanBuyukleriBul([]))
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
